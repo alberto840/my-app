@@ -1,0 +1,18 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class RestServiceService {
+
+  constructor(private http:HttpClient) { }
+
+  sendPost(body:FormData):Observable<any>{
+    return this.http.post(`http://localhost:3001/api/storage`,body)
+  }
+  public get(url:string){
+    return this.http.get(url)
+  }
+}

@@ -1,0 +1,15 @@
+<div>
+  <div>
+    <span>Adjunta el archivo</span>
+    <input type="file" (change)="getFile($event)">
+  </div>
+  <div>
+    <button (click)="sendFile()">Enviar</button>
+  </div>
+
+  <div class="grid">
+    <ul *ngFor="let catalogo of listCatalogo.data">
+      <li><a href={{catalogo.url}}>catalogo creado en la fecha: {{catalogo.createdAt}}</a></li>
+    </ul>
+  </div>
+</div>
